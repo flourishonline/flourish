@@ -1,52 +1,55 @@
 /* ============================================================
    FLOURISH ONLINE — BRAND CSS (FO 2026)
    ------------------------------------------------------------
-   A portable stylesheet for use in vanilla HTML projects
-   (Claude Code, Cowork, static sites, landing pages, etc.)
+   A portable stylesheet for vanilla HTML projects
+   (Claude Code, Cowork, static sites, landing pages).
 
-   Based on the live flourishonline.com Squarespace site,
-   not the earlier PDF guidelines (which list Futura + a
-   brighter palette that the site has moved past).
+   Built from the FO 2026 Brand Guidelines PDF:
+     - 9 official colours (Berry, Hot Pink, Blood Red, Purple,
+       Gold, Cream, Cyan, Aqua, Black)
+     - 4 typefaces: Eighties Comeback, League Spartan,
+       Chic Society Script, IBM Plex Sans
+     - 5 heading levels + body scale per guidelines
 
    Usage:
      <link rel="stylesheet" href="flourish-brand.css">
      <body class="fo-body">
        <h1>Your Visibility Era Starts Here</h1>
-       <p>Body copy goes here.</p>
+       <p>Body copy.</p>
        <a class="fo-btn fo-btn--primary" href="#">Let's do this</a>
      </body>
    ============================================================ */
 
 
 /* ------------------------------------------------------------
-   1. BRAND TOKENS (CSS custom properties)
+   1. BRAND TOKENS
+   Exact hex values from the FO 2026 Brand Guidelines PDF.
    ------------------------------------------------------------ */
 :root {
-  /* --- Core palette (from the live site) --- */
-  --fo-berry-deep:    #570021;   /* primary brand / button bg */
-  --fo-berry-ink:     #2d1717;   /* near-black, headings, text */
-  --fo-pink-hot:      #ff3dd5;   /* hover / highlight / accent */
-  --fo-aqua:          #05dfd3;   /* active state / pop accent */
-  --fo-cream:         #f4f1ef;   /* light text on dark bg */
+  /* --- Official brand palette --- */
+  --fo-berry:       #F1093A;   /* Flourish Berry — primary red */
+  --fo-hot-pink:    #FF3DD4;   /* Flourish Hot Pink — accent */
+  --fo-blood-red:   #570022;   /* Flourish Blood Red — deep */
+  --fo-purple:      #6B036A;   /* Flourish Purple */
+  --fo-gold:        #E1A214;   /* Flourish Gold */
+  --fo-cream:       #FAF6F1;   /* Flourish Cream — warm bg */
+  --fo-cyan:        #0242E8;   /* Flourish Cyan — electric blue */
+  --fo-aqua:        #02CEDB;   /* Flourish Aqua */
+  --fo-black:       #1A1412;   /* Flourish Black — warm black */
 
-  /* --- Extended palette (PDF guidelines — use sparingly) --- */
-  --fo-berry-bright:  #c1133a;   /* brighter berry / posters */
-  --fo-emerald:       #193133;   /* dark emerald alternative */
-  --fo-orange:        #ff503e;   /* bright accent */
-  --fo-aqua-pale:     #c1ead8;   /* soft aqua tint */
-
-  /* --- Neutral / utility --- */
-  --fo-bg:            #f4f1ef;   /* default page bg (warm cream) */
-  --fo-bg-alt:        #ffffff;   /* clean white */
-  --fo-text:          #2d1717;   /* body text */
-  --fo-text-muted:    #6b4a4a;   /* secondary text */
-  --fo-border:        #2d1717;
+  /* --- Neutral aliases --- */
+  --fo-bg:          var(--fo-cream);
+  --fo-bg-alt:      #ffffff;
+  --fo-text:        var(--fo-black);
+  --fo-text-muted:  #5a4a45;
+  --fo-border:      var(--fo-black);
 
   /* --- Semantic aliases --- */
-  --fo-primary:       var(--fo-berry-deep);
-  --fo-primary-hover: var(--fo-pink-hot);
-  --fo-accent:        var(--fo-pink-hot);
-  --fo-active:        var(--fo-aqua);
+  --fo-primary:       var(--fo-berry);
+  --fo-primary-hover: var(--fo-hot-pink);
+  --fo-accent:        var(--fo-hot-pink);
+  --fo-link:          var(--fo-blood-red);
+  --fo-link-hover:    var(--fo-hot-pink);
 
   /* --- Typography stack --- */
   --fo-font-display:  "Eighties Comeback", "Playfair Display", Georgia, serif;
@@ -54,14 +57,16 @@
   --fo-font-sans:     "League Spartan", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --fo-font-body:     "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* --- Type scale (desktop) --- */
-  --fo-h1:            120px;
-  --fo-h2:            90px;
-  --fo-h3:            40px;
-  --fo-h4:            70px;    /* script display */
-  --fo-p-large:       18px;
-  --fo-p:             20px;
-  --fo-p-small:       14px;
+  /* --- Type scale (from PDF Font Styling page) --- */
+  --fo-h1:            66px;   /* Eighties Comeback, sentence case */
+  --fo-h2:            40px;   /* League Spartan Extra Bold */
+  --fo-h3:            22px;   /* League Spartan Extra Bold UPPERCASE */
+  --fo-h4:            60px;   /* Chic Society script accent */
+  --fo-h5:            18px;   /* League Spartan Bold UPPERCASE 2pt */
+  --fo-body:          18px;   /* IBM Plex Sans */
+
+  /* --- Larger display (for hero sections, live site vibe) --- */
+  --fo-display-xl:    120px;
 
   /* --- Spacing scale --- */
   --fo-space-xs:      8px;
@@ -79,10 +84,9 @@
 
 /* ------------------------------------------------------------
    2. WEB FONT LOADING
-   Self-hosted on Squarespace CDN. These URLs are stable
-   as long as the FO site is live. If you need fully offline
-   fallback, swap to your own host or use Google Fonts
-   equivalents in the stack above.
+   Chic Society, Eighties Comeback, and IBM Plex Sans load from
+   the Squarespace CDN (same URLs used on flourishonline.com).
+   League Spartan loads from Google Fonts.
    ------------------------------------------------------------ */
 @font-face {
   font-family: "Chic Society";
@@ -104,10 +108,7 @@
   font-display: swap;
 }
 
-/* League Spartan isn't in your @font-face block (Squarespace
-   loads it via their font system). Pull it from Google Fonts
-   so it works in standalone HTML. */
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
 
 
 /* ------------------------------------------------------------
@@ -130,7 +131,7 @@ body,
   background: var(--fo-bg);
   color: var(--fo-text);
   font-family: var(--fo-font-body);
-  font-size: var(--fo-p);
+  font-size: var(--fo-body);
   font-weight: 400;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
@@ -145,112 +146,133 @@ svg {
 }
 
 a {
-  color: var(--fo-berry-deep);
+  color: var(--fo-link);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color var(--fo-transition);
 }
 
 a:hover {
-  color: var(--fo-pink-hot);
+  color: var(--fo-link-hover);
+}
+
+::selection {
+  background: var(--fo-hot-pink);
+  color: var(--fo-cream);
 }
 
 
 /* ------------------------------------------------------------
-   4. TYPOGRAPHY
-   Mirrors the live site's heading scale and letter-spacing.
+   4. TYPOGRAPHY — matches PDF Font Styling hierarchy
+   ------------------------------------------------------------
+   H1 — Eighties Comeback, 66px, sentence case, 0 tracking
+   H2 — League Spartan Extra Bold, 40px, sentence case, 0
+   H3 — League Spartan Extra Bold, 22px, UPPERCASE, 0
+   H4 — Chic Society Script, 60px, sentence case, 0
+   H5 — League Spartan Bold, 18px, UPPERCASE, 2pt tracking
+   Body — IBM Plex Sans, 18px, sentence case, 0
    ------------------------------------------------------------ */
+
 h1, .fo-h1 {
   font-family: var(--fo-font-display);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--fo-h1);
-  line-height: 0.9;
-  letter-spacing: -3px;
-  color: var(--fo-berry-ink);
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: var(--fo-black);
   margin: 0 0 var(--fo-space-md);
   text-transform: none;
 }
 
 h2, .fo-h2 {
-  font-family: var(--fo-font-display);
-  font-weight: 400;
+  font-family: var(--fo-font-sans);
+  font-weight: 800;
   font-size: var(--fo-h2);
-  line-height: 0.9;
-  letter-spacing: -2px;
-  color: var(--fo-berry-ink);
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--fo-black);
   margin: 0 0 var(--fo-space-md);
   text-transform: none;
 }
 
 h3, .fo-h3 {
-  font-family: var(--fo-font-display);
-  font-weight: 400;
+  font-family: var(--fo-font-sans);
+  font-weight: 800;
   font-size: var(--fo-h3);
-  line-height: 0.9;
-  letter-spacing: -2px;
-  color: var(--fo-berry-ink);
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--fo-black);
   margin: 0 0 var(--fo-space-sm);
-  text-transform: none;
+  text-transform: uppercase;
 }
 
-/* H4 is the script accent — use for pull quotes, taglines,
-   "hand-written" flourishes. Not for body sub-headings. */
+/* H4 is the script accent — pull quotes, taglines, hand-written
+   flourishes. Large and expressive. */
 h4, .fo-h4,
 .fo-script {
   font-family: var(--fo-font-script);
   font-weight: 400;
   font-size: var(--fo-h4);
-  line-height: 1.2;
-  letter-spacing: 1px;
-  color: var(--fo-berry-ink);
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--fo-black);
   margin: 0 0 var(--fo-space-sm);
+  text-transform: none;
 }
 
-/* Body paragraph variants */
+h5, .fo-h5,
+.fo-eyebrow {
+  font-family: var(--fo-font-sans);
+  font-weight: 700;
+  font-size: var(--fo-h5);
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: var(--fo-black);
+  margin: 0 0 var(--fo-space-sm);
+  text-transform: uppercase;
+}
+
+.fo-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Hero-scale display for big statement sections.
+   Not in the PDF hierarchy but matches the live site vibe. */
+.fo-display {
+  font-family: var(--fo-font-display);
+  font-weight: 300;
+  font-size: var(--fo-display-xl);
+  line-height: 0.9;
+  letter-spacing: -3px;
+  color: var(--fo-black);
+  margin: 0 0 var(--fo-space-md);
+}
+
 p {
   font-family: var(--fo-font-body);
   font-weight: 400;
-  font-size: var(--fo-p);
-  line-height: 1.4;
+  font-size: var(--fo-body);
+  line-height: 1.5;
   letter-spacing: 0;
   margin: 0 0 var(--fo-space-sm);
 }
 
-.fo-p-large,
-p.fo-p-large {
-  font-weight: 500;
-  font-size: var(--fo-p-large);
+.fo-lead {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.fo-small {
+  font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.fo-p-small,
-p.fo-p-small,
-.fo-eyebrow {
-  font-weight: 600;
-  font-size: var(--fo-p-small);
-  letter-spacing: 2px;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-/* Eyebrow label — the small uppercase text above a heading,
-   like "PREMIUM AGENCY OFFERS:" on the site */
-.fo-eyebrow {
-  display: inline-block;
-  margin-bottom: var(--fo-space-sm);
-  color: var(--fo-berry-ink);
 }
 
 strong, b { font-weight: 700; }
 em, i    { font-style: italic; }
-
-/* Selection colour — small detail, very on-brand */
-::selection {
-  background: var(--fo-pink-hot);
-  color: var(--fo-cream);
-}
 
 
 /* ------------------------------------------------------------
@@ -258,13 +280,13 @@ em, i    { font-style: italic; }
    ------------------------------------------------------------ */
 @media (max-width: 767px) {
   :root {
-    --fo-h1:       80px;
-    --fo-h2:       55px;
-    --fo-h3:       36px;
-    --fo-h4:       18px;
-    --fo-p-large:  14px;
-    --fo-p:        17px;
-    --fo-p-small:  12px;
+    --fo-h1:         48px;
+    --fo-h2:         30px;
+    --fo-h3:         18px;
+    --fo-h4:         42px;
+    --fo-h5:         16px;
+    --fo-body:       16px;
+    --fo-display-xl: 72px;
   }
 }
 
@@ -279,47 +301,51 @@ em, i    { font-style: italic; }
   padding-inline: var(--fo-space-md);
 }
 
-.fo-section {
-  padding-block: var(--fo-space-xl);
-}
-
+.fo-section         { padding-block: var(--fo-space-xl); }
 .fo-section--tight  { padding-block: var(--fo-space-lg); }
 .fo-section--loose  { padding-block: calc(var(--fo-space-xl) * 1.5); }
 
-/* Background colour blocks — useful for alternating sections */
-.fo-bg-cream    { background: var(--fo-cream); color: var(--fo-berry-ink); }
-.fo-bg-berry    { background: var(--fo-berry-deep); color: var(--fo-cream); }
-.fo-bg-ink      { background: var(--fo-berry-ink); color: var(--fo-cream); }
-.fo-bg-pink     { background: var(--fo-pink-hot); color: var(--fo-cream); }
-.fo-bg-aqua     { background: var(--fo-aqua); color: var(--fo-berry-ink); }
-.fo-bg-white    { background: #ffffff; color: var(--fo-berry-ink); }
+/* Background colour blocks with automatic text-colour flipping */
+.fo-bg-cream      { background: var(--fo-cream);     color: var(--fo-black); }
+.fo-bg-white      { background: #ffffff;             color: var(--fo-black); }
+.fo-bg-berry      { background: var(--fo-berry);     color: var(--fo-cream); }
+.fo-bg-blood      { background: var(--fo-blood-red); color: var(--fo-cream); }
+.fo-bg-pink       { background: var(--fo-hot-pink);  color: var(--fo-cream); }
+.fo-bg-purple     { background: var(--fo-purple);    color: var(--fo-cream); }
+.fo-bg-gold       { background: var(--fo-gold);      color: var(--fo-black); }
+.fo-bg-cyan       { background: var(--fo-cyan);      color: var(--fo-cream); }
+.fo-bg-aqua       { background: var(--fo-aqua);      color: var(--fo-black); }
+.fo-bg-black      { background: var(--fo-black);     color: var(--fo-cream); }
 
-/* When heading sits on a dark bg, flip its colour */
-.fo-bg-berry h1, .fo-bg-berry h2, .fo-bg-berry h3, .fo-bg-berry h4,
-.fo-bg-ink   h1, .fo-bg-ink   h2, .fo-bg-ink   h3, .fo-bg-ink   h4,
-.fo-bg-pink  h1, .fo-bg-pink  h2, .fo-bg-pink  h3, .fo-bg-pink  h4 {
+/* Auto-flip heading colours on dark backgrounds */
+.fo-bg-berry  :where(h1, h2, h3, h4, h5),
+.fo-bg-blood  :where(h1, h2, h3, h4, h5),
+.fo-bg-pink   :where(h1, h2, h3, h4, h5),
+.fo-bg-purple :where(h1, h2, h3, h4, h5),
+.fo-bg-cyan   :where(h1, h2, h3, h4, h5),
+.fo-bg-black  :where(h1, h2, h3, h4, h5) {
   color: var(--fo-cream);
 }
 
 
 /* ------------------------------------------------------------
    7. BUTTONS
-   Square corners, uppercase League Spartan, tight letterspacing
+   Per PDF: static = berry red, hover = hot pink
    ------------------------------------------------------------ */
 .fo-btn,
 button.fo-btn,
 a.fo-btn {
   display: inline-block;
   font-family: var(--fo-font-sans);
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 14px;
   line-height: 1;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  padding: 16px 28px;
-  border: 1px solid transparent;
+  padding: 18px 32px;
+  border: 2px solid transparent;
   border-radius: var(--fo-radius);
   cursor: pointer;
   transition: background-color var(--fo-transition),
@@ -327,42 +353,52 @@ a.fo-btn {
               border-color var(--fo-transition);
 }
 
-/* Primary — solid berry filling, flips to deep maroon on hover */
+/* Primary — Flourish Berry → Hot Pink on hover (per PDF) */
 .fo-btn--primary {
-  background: var(--fo-berry-bright);
+  background: var(--fo-berry);
   color: var(--fo-cream);
-  border-color: var(--fo-berry-bright);
+  border-color: var(--fo-berry);
 }
 .fo-btn--primary:hover {
-  background: var(--fo-berry-deep);
-  border-color: var(--fo-berry-deep);
+  background: var(--fo-hot-pink);
+  border-color: var(--fo-hot-pink);
   color: var(--fo-cream);
 }
 
-/* Secondary — outline becomes hot pink on hover */
-.fo-btn--secondary {
-  background: transparent;
-  color: var(--fo-berry-ink);
-  border-color: var(--fo-berry-ink);
+/* Dark — Blood red for secondary dark CTAs */
+.fo-btn--dark {
+  background: var(--fo-blood-red);
+  color: var(--fo-cream);
+  border-color: var(--fo-blood-red);
 }
-.fo-btn--secondary:hover {
-  background: var(--fo-pink-hot);
-  border-color: var(--fo-pink-hot);
+.fo-btn--dark:hover {
+  background: var(--fo-hot-pink);
+  border-color: var(--fo-hot-pink);
   color: var(--fo-cream);
 }
 
-/* Tertiary — subtle, pink hover */
-.fo-btn--tertiary {
+/* Outline — transparent with ink border */
+.fo-btn--outline {
   background: transparent;
-  color: var(--fo-berry-deep);
+  color: var(--fo-black);
+  border-color: var(--fo-black);
+}
+.fo-btn--outline:hover {
+  background: var(--fo-black);
+  color: var(--fo-cream);
+}
+
+/* Ghost — minimal, text-like */
+.fo-btn--ghost {
+  background: transparent;
+  color: var(--fo-blood-red);
   border-color: transparent;
   text-decoration: underline;
   text-underline-offset: 4px;
+  padding: 18px 8px;
 }
-.fo-btn--tertiary:hover {
-  background: var(--fo-berry-deep);
-  border-color: var(--fo-pink-hot);
-  color: var(--fo-cream);
+.fo-btn--ghost:hover {
+  color: var(--fo-hot-pink);
   text-decoration: none;
 }
 
@@ -372,7 +408,7 @@ a.fo-btn {
    ------------------------------------------------------------ */
 .fo-form {
   font-family: var(--fo-font-body);
-  max-width: 500px;
+  max-width: 560px;
 }
 
 .fo-form label,
@@ -383,7 +419,7 @@ a.fo-btn {
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--fo-berry-ink);
+  color: var(--fo-black);
   margin-bottom: var(--fo-space-xs);
 }
 
@@ -392,19 +428,21 @@ a.fo-btn {
 .fo-form input[type="tel"],
 .fo-form input[type="date"],
 .fo-form input[type="number"],
+.fo-form input[type="url"],
 .fo-form textarea,
 .fo-form select,
 .fo-input {
   width: 100%;
   font-family: var(--fo-font-body);
-  font-size: 14px;
-  color: var(--fo-berry-ink);
+  font-size: 16px;
+  color: var(--fo-black);
   background: #ffffff;
-  border: 1px solid var(--fo-berry-ink);
+  border: 1px solid var(--fo-black);
   border-radius: var(--fo-radius);
-  padding: 12px;
+  padding: 14px;
   margin-bottom: var(--fo-space-sm);
-  transition: border-color var(--fo-transition);
+  transition: border-color var(--fo-transition),
+              box-shadow var(--fo-transition);
 }
 
 .fo-form input:focus,
@@ -412,25 +450,25 @@ a.fo-btn {
 .fo-form select:focus,
 .fo-input:focus {
   outline: none;
-  border-color: var(--fo-pink-hot);
-  box-shadow: 0 0 0 2px rgba(255, 61, 213, 0.2);
+  border-color: var(--fo-hot-pink);
+  box-shadow: 0 0 0 3px rgba(255, 61, 212, 0.2);
 }
 
 .fo-form input::placeholder,
 .fo-form textarea::placeholder {
-  color: var(--fo-berry-ink);
-  opacity: 0.5;
+  color: var(--fo-black);
+  opacity: 0.4;
 }
 
 .fo-form input[type="checkbox"],
 .fo-form input[type="radio"] {
-  accent-color: var(--fo-pink-hot);
+  accent-color: var(--fo-hot-pink);
   width: auto;
   margin-right: var(--fo-space-xs);
 }
 
 .fo-required {
-  color: var(--fo-pink-hot);
+  color: var(--fo-hot-pink);
   margin-left: 2px;
 }
 
@@ -450,11 +488,11 @@ a.fo-btn {
 .fo-nav-link {
   font-family: var(--fo-font-sans);
   font-weight: 800;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.2;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--fo-berry-ink);
+  color: var(--fo-black);
   text-decoration: none;
   padding: 8px 12px;
   transition: color var(--fo-transition);
@@ -462,7 +500,7 @@ a.fo-btn {
 
 .fo-nav a:hover,
 .fo-nav-link:hover {
-  color: var(--fo-pink-hot);
+  color: var(--fo-hot-pink);
 }
 
 .fo-nav-link--active {
@@ -471,44 +509,60 @@ a.fo-btn {
 
 
 /* ------------------------------------------------------------
-   10. CARDS / CONTENT BLOCKS
+   10. CARDS
    ------------------------------------------------------------ */
 .fo-card {
   background: var(--fo-bg-alt);
-  border: 1px solid var(--fo-berry-ink);
+  border: 1px solid var(--fo-black);
   padding: var(--fo-space-lg);
   border-radius: var(--fo-radius);
 }
 
 .fo-card--berry {
-  background: var(--fo-berry-deep);
+  background: var(--fo-berry);
   color: var(--fo-cream);
-  border-color: var(--fo-berry-deep);
+  border-color: var(--fo-berry);
+}
+.fo-card--blood {
+  background: var(--fo-blood-red);
+  color: var(--fo-cream);
+  border-color: var(--fo-blood-red);
+}
+.fo-card--purple {
+  background: var(--fo-purple);
+  color: var(--fo-cream);
+  border-color: var(--fo-purple);
+}
+.fo-card--cream {
+  background: var(--fo-cream);
+  color: var(--fo-black);
+  border-color: var(--fo-black);
 }
 
-.fo-card--berry h1, .fo-card--berry h2,
-.fo-card--berry h3, .fo-card--berry h4 {
+.fo-card--berry :where(h1, h2, h3, h4, h5),
+.fo-card--blood :where(h1, h2, h3, h4, h5),
+.fo-card--purple :where(h1, h2, h3, h4, h5) {
   color: var(--fo-cream);
 }
 
 
 /* ------------------------------------------------------------
-   11. DIVIDERS
+   11. DIVIDERS (per PDF — cyan stroke as accent)
    ------------------------------------------------------------ */
 .fo-divider {
   border: 0;
-  border-top: 1px solid var(--fo-berry-deep);
+  border-top: 1px solid var(--fo-cyan);
   margin-block: var(--fo-space-lg);
   width: 100%;
 }
 
-.fo-divider--accent {
-  border-top-color: var(--fo-pink-hot);
-}
+.fo-divider--ink  { border-top-color: var(--fo-black); }
+.fo-divider--pink { border-top-color: var(--fo-hot-pink); }
+.fo-divider--gold { border-top-color: var(--fo-gold); }
 
 
 /* ------------------------------------------------------------
-   12. LISTS
+   12. LISTS (per PDF — bold bulleted copy)
    ------------------------------------------------------------ */
 .fo-list {
   list-style: none;
@@ -522,9 +576,9 @@ a.fo-btn {
   font-size: 16px;
   line-height: 1.4;
   padding-left: 24px;
-  margin-bottom: var(--fo-space-xs);
+  margin-bottom: var(--fo-space-sm);
   position: relative;
-  color: var(--fo-berry-ink);
+  color: var(--fo-black);
 }
 
 .fo-list li::before {
@@ -532,41 +586,40 @@ a.fo-btn {
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--fo-berry-deep);
+  color: var(--fo-black);
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 
 /* ------------------------------------------------------------
-   13. BLOG / ARTICLE STYLING
-   Matches the site's blog post typography.
+   13. BLOG / ARTICLE
    ------------------------------------------------------------ */
 .fo-article .fo-article-title,
 .fo-article h1.fo-entry-title {
   font-family: var(--fo-font-display);
-  font-weight: 300;
-  font-size: 60px;
-  line-height: 0.9;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1;
   letter-spacing: 0;
-  color: var(--fo-berry-ink);
+  color: var(--fo-black);
   margin-bottom: var(--fo-space-md);
 }
 
 .fo-article h2 {
   font-family: var(--fo-font-display);
-  font-size: 50px;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  color: var(--fo-berry-ink);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.1;
+  color: var(--fo-black);
   margin-top: var(--fo-space-lg);
 }
 
 .fo-article .fo-meta {
   font-family: var(--fo-font-body);
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2px;
   line-height: 1.3;
   text-transform: uppercase;
   color: var(--fo-text-muted);
@@ -576,62 +629,60 @@ a.fo-btn {
 @media (max-width: 767px) {
   .fo-article .fo-article-title,
   .fo-article h1.fo-entry-title {
-    font-size: 50px;
-  }
-  .fo-article h2 {
     font-size: 36px;
   }
-  .fo-article .fo-meta {
-    font-size: 14px;
-  }
+  .fo-article h2 { font-size: 26px; }
 }
 
 
 /* ------------------------------------------------------------
-   14. MARQUEE / OVERSIZED DISPLAY TEXT
-   For those big "WHO WE ARE WHO WE ARE" sections on the site.
+   14. OVERSIZED DISPLAY TEXT (live site "WHO WE ARE" style)
    ------------------------------------------------------------ */
 .fo-display-huge {
   font-family: var(--fo-font-display);
   font-weight: 400;
-  font-size: clamp(80px, 15vw, 220px);
+  font-size: clamp(72px, 15vw, 220px);
   line-height: 0.85;
   letter-spacing: -4px;
-  color: var(--fo-berry-ink);
+  color: var(--fo-black);
   text-transform: uppercase;
   margin: 0;
 }
 
 .fo-display-huge--outline {
   color: transparent;
-  -webkit-text-stroke: 2px var(--fo-berry-ink);
+  -webkit-text-stroke: 2px currentColor;
 }
 
 
 /* ------------------------------------------------------------
    15. UTILITIES
    ------------------------------------------------------------ */
-.fo-text-center    { text-align: center; }
-.fo-text-left      { text-align: left; }
-.fo-text-right     { text-align: right; }
+.fo-text-center     { text-align: center; }
+.fo-text-left       { text-align: left; }
+.fo-text-right      { text-align: right; }
 
-.fo-text-berry     { color: var(--fo-berry-deep); }
-.fo-text-ink       { color: var(--fo-berry-ink); }
-.fo-text-pink      { color: var(--fo-pink-hot); }
-.fo-text-aqua      { color: var(--fo-aqua); }
-.fo-text-cream     { color: var(--fo-cream); }
+.fo-text-berry      { color: var(--fo-berry); }
+.fo-text-blood      { color: var(--fo-blood-red); }
+.fo-text-pink       { color: var(--fo-hot-pink); }
+.fo-text-purple     { color: var(--fo-purple); }
+.fo-text-gold       { color: var(--fo-gold); }
+.fo-text-cyan       { color: var(--fo-cyan); }
+.fo-text-aqua       { color: var(--fo-aqua); }
+.fo-text-cream      { color: var(--fo-cream); }
+.fo-text-black      { color: var(--fo-black); }
 
-.fo-italic         { font-style: italic; }
-.fo-uppercase      { text-transform: uppercase; letter-spacing: 2px; }
+.fo-italic          { font-style: italic; }
+.fo-uppercase       { text-transform: uppercase; letter-spacing: 2px; }
 
-.fo-mb-sm          { margin-bottom: var(--fo-space-sm); }
-.fo-mb-md          { margin-bottom: var(--fo-space-md); }
-.fo-mb-lg          { margin-bottom: var(--fo-space-lg); }
-.fo-mt-sm          { margin-top: var(--fo-space-sm); }
-.fo-mt-md          { margin-top: var(--fo-space-md); }
-.fo-mt-lg          { margin-top: var(--fo-space-lg); }
+.fo-mb-sm           { margin-bottom: var(--fo-space-sm); }
+.fo-mb-md           { margin-bottom: var(--fo-space-md); }
+.fo-mb-lg           { margin-bottom: var(--fo-space-lg); }
+.fo-mt-sm           { margin-top: var(--fo-space-sm); }
+.fo-mt-md           { margin-top: var(--fo-space-md); }
+.fo-mt-lg           { margin-top: var(--fo-space-lg); }
 
-.fo-hidden         { display: none !important; }
+.fo-hidden          { display: none !important; }
 .fo-visually-hidden {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -643,10 +694,10 @@ a.fo-btn {
 }
 
 @media (max-width: 767px) {
-  .fo-hide-mobile  { display: none !important; }
-  .fo-center-mobile { text-align: center !important; }
+  .fo-hide-mobile    { display: none !important; }
+  .fo-center-mobile  { text-align: center !important; }
 }
 
 @media (min-width: 768px) {
-  .fo-hide-desktop { display: none !important; }
+  .fo-hide-desktop   { display: none !important; }
 }
