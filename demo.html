@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flourish Online — Brand CSS Demo</title>
+  <title>Flourish Online — Brand CSS Demo (FO 2026)</title>
   <link rel="stylesheet" href="flourish-brand.css">
 </head>
 <body class="fo-body">
@@ -23,51 +23,74 @@
   <!-- HERO -->
   <section class="fo-section fo-container">
     <span class="fo-eyebrow">FO 2026 Brand System</span>
-    <h1>You're the best in your field.</h1>
-    <h2><em>Almost nobody knows it.</em></h2>
-    <p class="fo-p-large" style="max-width: 600px;">
+    <h1 class="fo-display">You're the best in your field.</h1>
+    <h4 style="color: var(--fo-berry);">Almost nobody knows it.</h4>
+    <p class="fo-lead" style="max-width: 620px;">
       Bold, expressive brands and websites for women ready to close the visibility gap.
     </p>
     <div class="fo-mt-md">
       <a href="#" class="fo-btn fo-btn--primary">VIP Brand Intensive</a>
-      <a href="#" class="fo-btn fo-btn--secondary">Learn more</a>
+      <a href="#" class="fo-btn fo-btn--outline">Learn more</a>
     </div>
   </section>
 
-  <!-- TYPE SCALE -->
+  <!-- TYPE HIERARCHY (per PDF) -->
   <section class="fo-section fo-bg-cream">
     <div class="fo-container">
-      <span class="fo-eyebrow">Typography</span>
-      <h3>Type scale</h3>
-      <h1>H1 — Eighties Comeback</h1>
-      <h2>H2 — display serif</h2>
-      <h3>H3 — section heading</h3>
-      <h4>h4 — Chic Society script accent</h4>
-      <p>Body paragraph in IBM Plex Sans — this is the default copy weight and size. Use it for most prose. Line-height 1.4, no letter-spacing, 20px on desktop, 17px on mobile.</p>
-      <p class="fo-p-large">P.LARGE — UPPERCASE INTRO COPY WITH TRACKING</p>
-      <p class="fo-p-small">P.SMALL — EYEBROW / META / CAPTION</p>
+      <span class="fo-eyebrow">Typography — per brand guidelines</span>
+      <div style="margin-top: 24px;">
+        <p class="fo-small fo-uppercase" style="color: var(--fo-text-muted);">Heading 01 — Eighties Comeback</p>
+        <h1>The quick brown fox jumps</h1>
+
+        <p class="fo-small fo-uppercase fo-mt-lg" style="color: var(--fo-text-muted);">Heading 02 — League Spartan Extra Bold</p>
+        <h2>The quick brown fox jumps over the lazy dog</h2>
+
+        <p class="fo-small fo-uppercase fo-mt-lg" style="color: var(--fo-text-muted);">Heading 03 — League Spartan Extra Bold UPPERCASE</p>
+        <h3>The quick brown fox jumps over the lazy dog</h3>
+
+        <p class="fo-small fo-uppercase fo-mt-lg" style="color: var(--fo-text-muted);">Heading 04 — Chic Society Script</p>
+        <h4>The quick brown fox</h4>
+
+        <p class="fo-small fo-uppercase fo-mt-lg" style="color: var(--fo-text-muted);">Heading 05 — League Spartan Bold UPPERCASE 2pt</p>
+        <h5>The quick brown fox jumps over the lazy dog</h5>
+
+        <p class="fo-small fo-uppercase fo-mt-lg" style="color: var(--fo-text-muted);">Body — IBM Plex Sans</p>
+        <p>The quick brown fox jumps over the lazy dog. Body copy sits at 18px on desktop, drops to 16px on mobile. Line-height 1.5 for comfortable reading.</p>
+      </div>
     </div>
   </section>
 
-  <!-- COLOUR SWATCHES -->
+  <!-- FULL PALETTE — all 9 official colours -->
   <section class="fo-section fo-container">
-    <span class="fo-eyebrow">Colour Palette</span>
-    <h3>Core colours</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 24px;">
-      <div class="fo-bg-berry" style="padding: 32px 16px;">
-        <strong>Berry Deep</strong><br>#570021
+    <span class="fo-eyebrow">Colour Palette — all 9 official brand colours</span>
+    <h3 class="fo-mt-sm">Swatches</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 24px;">
+      <div class="fo-bg-berry" style="padding: 40px 16px;">
+        <strong>Flourish Berry</strong><br>#F1093A
       </div>
-      <div class="fo-bg-ink" style="padding: 32px 16px;">
-        <strong>Berry Ink</strong><br>#2d1717
+      <div class="fo-bg-pink" style="padding: 40px 16px;">
+        <strong>Flourish Hot Pink</strong><br>#FF3DD4
       </div>
-      <div class="fo-bg-pink" style="padding: 32px 16px;">
-        <strong>Hot Pink</strong><br>#ff3dd5
+      <div class="fo-bg-blood" style="padding: 40px 16px;">
+        <strong>Flourish Blood Red</strong><br>#570022
       </div>
-      <div class="fo-bg-aqua" style="padding: 32px 16px;">
-        <strong>Aqua</strong><br>#05dfd3
+      <div class="fo-bg-purple" style="padding: 40px 16px;">
+        <strong>Flourish Purple</strong><br>#6B036A
       </div>
-      <div class="fo-bg-cream" style="padding: 32px 16px; border: 1px solid #2d1717;">
-        <strong>Cream</strong><br>#f4f1ef
+      <div class="fo-bg-gold" style="padding: 40px 16px;">
+        <strong>Flourish Gold</strong><br>#E1A214
+      </div>
+      <div class="fo-bg-cyan" style="padding: 40px 16px;">
+        <strong>Flourish Cyan</strong><br>#0242E8
+      </div>
+      <div class="fo-bg-aqua" style="padding: 40px 16px;">
+        <strong>Flourish Aqua</strong><br>#02CEDB
+      </div>
+      <div class="fo-bg-black" style="padding: 40px 16px;">
+        <strong>Flourish Black</strong><br>#1A1412
+      </div>
+      <div class="fo-bg-cream" style="padding: 40px 16px; border: 1px solid var(--fo-black);">
+        <strong>Flourish Cream</strong><br>#FAF6F1
       </div>
     </div>
   </section>
@@ -77,12 +100,13 @@
     <div class="fo-container">
       <span class="fo-eyebrow">Buttons</span>
       <h3>Button styles</h3>
-      <div class="fo-mt-md">
-        <a href="#" class="fo-btn fo-btn--primary">Primary</a>
-        <a href="#" class="fo-btn fo-btn--secondary">Secondary</a>
-        <a href="#" class="fo-btn fo-btn--tertiary">Tertiary</a>
+      <div class="fo-mt-md" style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <a href="#" class="fo-btn fo-btn--primary">Primary (Berry)</a>
+        <a href="#" class="fo-btn fo-btn--dark">Dark (Blood Red)</a>
+        <a href="#" class="fo-btn fo-btn--outline">Outline</a>
+        <a href="#" class="fo-btn fo-btn--ghost">Ghost link</a>
       </div>
-      <p class="fo-p-small fo-mt-md">Hover any button to see the pink/berry transition.</p>
+      <p class="fo-small fo-mt-md" style="color: var(--fo-text-muted);">Per PDF: buttons go from berry red → hot pink on hover.</p>
     </div>
   </section>
 
@@ -100,35 +124,37 @@
       <label for="message">Message</label>
       <textarea id="message" rows="4" placeholder="Tell us about your project..."></textarea>
 
-      <label><input type="checkbox"> Subscribe to the newsletter</label>
+      <label style="display: flex; align-items: center; gap: 8px; text-transform: none; letter-spacing: 0; font-weight: 400;">
+        <input type="checkbox"> Subscribe to the newsletter
+      </label>
 
       <button type="submit" class="fo-btn fo-btn--primary fo-mt-md">Send message</button>
     </form>
   </section>
 
-  <!-- CARDS -->
+  <!-- CARDS — showing off the full palette -->
   <section class="fo-section fo-bg-cream">
     <div class="fo-container">
-      <span class="fo-eyebrow">Cards</span>
-      <h3>Service cards</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
+      <span class="fo-eyebrow">Service cards</span>
+      <h3>Three signature offers</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">
         <div class="fo-card">
-          <span class="fo-eyebrow">Two Week Intensive</span>
-          <h4>Brand Spark</h4>
+          <h5 style="color: var(--fo-berry);">Two Week Intensive</h5>
+          <h4 style="font-size: 48px;">Brand Spark</h4>
           <p>Your complete visual brand identity, built around who you actually are.</p>
-          <a href="#" class="fo-btn fo-btn--secondary">Learn more</a>
+          <a href="#" class="fo-btn fo-btn--outline">Learn more</a>
         </div>
         <div class="fo-card fo-card--berry">
-          <span class="fo-eyebrow" style="color: var(--fo-cream);">Two Week Intensive</span>
-          <h4>Brand Fire</h4>
+          <h5>Two Week Intensive</h5>
+          <h4 style="font-size: 48px;">Brand Fire</h4>
           <p>Your custom website in two weeks. Beautiful, strategic, built to convert.</p>
-          <a href="#" class="fo-btn fo-btn--primary" style="background: var(--fo-pink-hot); border-color: var(--fo-pink-hot);">Learn more</a>
+          <a href="#" class="fo-btn fo-btn--dark" style="background: var(--fo-black); border-color: var(--fo-black);">Learn more</a>
         </div>
-        <div class="fo-card">
-          <span class="fo-eyebrow">One Day Intensive</span>
-          <h4>Brand Glow</h4>
+        <div class="fo-card fo-card--purple">
+          <h5>One Day Intensive</h5>
+          <h4 style="font-size: 48px;">Brand Glow</h4>
           <p>One powerful day to knock out whatever's been sitting on your list.</p>
-          <a href="#" class="fo-btn fo-btn--secondary">Learn more</a>
+          <a href="#" class="fo-btn fo-btn--primary">Learn more</a>
         </div>
       </div>
     </div>
@@ -136,25 +162,30 @@
 
   <!-- LISTS + DIVIDERS -->
   <section class="fo-section fo-container">
-    <span class="fo-eyebrow">Lists &amp; Dividers</span>
+    <span class="fo-eyebrow">Lists &amp; dividers</span>
     <h3>What's included</h3>
     <ul class="fo-list">
       <li>Brand archetype deep dive and strategic positioning</li>
       <li>Logo suite, colour palette, typography system</li>
       <li>Full brand guidelines PDF</li>
-      <li>Website build with CMS training</li>
+      <li>Website build with CMS training and handover</li>
     </ul>
 
+    <p class="fo-small fo-uppercase fo-mt-lg" style="color: var(--fo-text-muted);">Divider (cyan — per PDF)</p>
     <hr class="fo-divider">
-    <p class="fo-p-small">Standard divider above, accent divider below.</p>
-    <hr class="fo-divider fo-divider--accent">
+
+    <p class="fo-small fo-uppercase" style="color: var(--fo-text-muted);">Divider (hot pink variant)</p>
+    <hr class="fo-divider fo-divider--pink">
+
+    <p class="fo-small fo-uppercase" style="color: var(--fo-text-muted);">Divider (gold variant)</p>
+    <hr class="fo-divider fo-divider--gold">
   </section>
 
-  <!-- HUGE DISPLAY TEXT -->
-  <section class="fo-section fo-bg-ink fo-text-center">
+  <!-- HUGE DISPLAY -->
+  <section class="fo-section fo-bg-blood fo-text-center">
     <div class="fo-container">
       <p class="fo-display-huge fo-text-cream">FLOURISH</p>
-      <p class="fo-script fo-text-cream" style="font-size: 48px;">your visibility era</p>
+      <p class="fo-script fo-text-cream" style="font-size: 48px; margin-top: 16px;">your visibility era</p>
     </div>
   </section>
 
@@ -163,17 +194,17 @@
     <article class="fo-article fo-container" style="max-width: 720px;">
       <p class="fo-meta">Apr 13, 2026 · Brand Strategy</p>
       <h1 class="fo-article-title"><em>What Beyoncé, Dolly and Stevie can teach you about brand archetypes.</em></h1>
-      <p>Three women. Three archetypes. Three masterclasses in being unapologetically yourself. Here's what you can learn from each of them about building a brand that actually fits.</p>
+      <p class="fo-lead">Three women. Three archetypes. Three masterclasses in being unapologetically yourself.</p>
       <h2>The Ruler archetype</h2>
       <p>Rulers lead with authority, structure, and a clear point of view. They don't ask permission — they set the agenda.</p>
     </article>
   </section>
 
   <!-- FOOTER -->
-  <footer class="fo-section--tight fo-bg-ink fo-text-center">
+  <footer class="fo-section--tight fo-bg-black fo-text-center">
     <div class="fo-container">
-      <p class="fo-script fo-text-cream" style="font-size: 48px; margin-bottom: 16px;">Flourish</p>
-      <p class="fo-p-small fo-text-cream">© Flourish Online 2026</p>
+      <p class="fo-script fo-text-cream" style="font-size: 56px; margin-bottom: 16px;">Flourish</p>
+      <p class="fo-small fo-uppercase fo-text-cream">© Flourish Online 2026</p>
     </div>
   </footer>
 
