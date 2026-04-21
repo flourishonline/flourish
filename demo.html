@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flourish Online — Brand CSS Demo</title>
+  <link rel="stylesheet" href="flourish-brand.css">
+</head>
+<body class="fo-body">
+
+  <!-- NAV -->
+  <nav class="fo-nav fo-container">
+    <a href="#" class="fo-nav-link">Flourish Online</a>
+    <div>
+      <a href="#" class="fo-nav-link">Home</a>
+      <a href="#" class="fo-nav-link fo-nav-link--active">About</a>
+      <a href="#" class="fo-nav-link">Services</a>
+      <a href="#" class="fo-nav-link">Blog</a>
+      <a href="#" class="fo-nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="fo-section fo-container">
+    <span class="fo-eyebrow">FO 2026 Brand System</span>
+    <h1>You're the best in your field.</h1>
+    <h2><em>Almost nobody knows it.</em></h2>
+    <p class="fo-p-large" style="max-width: 600px;">
+      Bold, expressive brands and websites for women ready to close the visibility gap.
+    </p>
+    <div class="fo-mt-md">
+      <a href="#" class="fo-btn fo-btn--primary">VIP Brand Intensive</a>
+      <a href="#" class="fo-btn fo-btn--secondary">Learn more</a>
+    </div>
+  </section>
+
+  <!-- TYPE SCALE -->
+  <section class="fo-section fo-bg-cream">
+    <div class="fo-container">
+      <span class="fo-eyebrow">Typography</span>
+      <h3>Type scale</h3>
+      <h1>H1 — Eighties Comeback</h1>
+      <h2>H2 — display serif</h2>
+      <h3>H3 — section heading</h3>
+      <h4>h4 — Chic Society script accent</h4>
+      <p>Body paragraph in IBM Plex Sans — this is the default copy weight and size. Use it for most prose. Line-height 1.4, no letter-spacing, 20px on desktop, 17px on mobile.</p>
+      <p class="fo-p-large">P.LARGE — UPPERCASE INTRO COPY WITH TRACKING</p>
+      <p class="fo-p-small">P.SMALL — EYEBROW / META / CAPTION</p>
+    </div>
+  </section>
+
+  <!-- COLOUR SWATCHES -->
+  <section class="fo-section fo-container">
+    <span class="fo-eyebrow">Colour Palette</span>
+    <h3>Core colours</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 24px;">
+      <div class="fo-bg-berry" style="padding: 32px 16px;">
+        <strong>Berry Deep</strong><br>#570021
+      </div>
+      <div class="fo-bg-ink" style="padding: 32px 16px;">
+        <strong>Berry Ink</strong><br>#2d1717
+      </div>
+      <div class="fo-bg-pink" style="padding: 32px 16px;">
+        <strong>Hot Pink</strong><br>#ff3dd5
+      </div>
+      <div class="fo-bg-aqua" style="padding: 32px 16px;">
+        <strong>Aqua</strong><br>#05dfd3
+      </div>
+      <div class="fo-bg-cream" style="padding: 32px 16px; border: 1px solid #2d1717;">
+        <strong>Cream</strong><br>#f4f1ef
+      </div>
+    </div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="fo-section fo-bg-cream">
+    <div class="fo-container">
+      <span class="fo-eyebrow">Buttons</span>
+      <h3>Button styles</h3>
+      <div class="fo-mt-md">
+        <a href="#" class="fo-btn fo-btn--primary">Primary</a>
+        <a href="#" class="fo-btn fo-btn--secondary">Secondary</a>
+        <a href="#" class="fo-btn fo-btn--tertiary">Tertiary</a>
+      </div>
+      <p class="fo-p-small fo-mt-md">Hover any button to see the pink/berry transition.</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="fo-section fo-container">
+    <span class="fo-eyebrow">Forms</span>
+    <h3>Form styling</h3>
+    <form class="fo-form fo-mt-md">
+      <label for="name">Name <span class="fo-required">*</span></label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label for="email">Email <span class="fo-required">*</span></label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" placeholder="Tell us about your project..."></textarea>
+
+      <label><input type="checkbox"> Subscribe to the newsletter</label>
+
+      <button type="submit" class="fo-btn fo-btn--primary fo-mt-md">Send message</button>
+    </form>
+  </section>
+
+  <!-- CARDS -->
+  <section class="fo-section fo-bg-cream">
+    <div class="fo-container">
+      <span class="fo-eyebrow">Cards</span>
+      <h3>Service cards</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
+        <div class="fo-card">
+          <span class="fo-eyebrow">Two Week Intensive</span>
+          <h4>Brand Spark</h4>
+          <p>Your complete visual brand identity, built around who you actually are.</p>
+          <a href="#" class="fo-btn fo-btn--secondary">Learn more</a>
+        </div>
+        <div class="fo-card fo-card--berry">
+          <span class="fo-eyebrow" style="color: var(--fo-cream);">Two Week Intensive</span>
+          <h4>Brand Fire</h4>
+          <p>Your custom website in two weeks. Beautiful, strategic, built to convert.</p>
+          <a href="#" class="fo-btn fo-btn--primary" style="background: var(--fo-pink-hot); border-color: var(--fo-pink-hot);">Learn more</a>
+        </div>
+        <div class="fo-card">
+          <span class="fo-eyebrow">One Day Intensive</span>
+          <h4>Brand Glow</h4>
+          <p>One powerful day to knock out whatever's been sitting on your list.</p>
+          <a href="#" class="fo-btn fo-btn--secondary">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTS + DIVIDERS -->
+  <section class="fo-section fo-container">
+    <span class="fo-eyebrow">Lists &amp; Dividers</span>
+    <h3>What's included</h3>
+    <ul class="fo-list">
+      <li>Brand archetype deep dive and strategic positioning</li>
+      <li>Logo suite, colour palette, typography system</li>
+      <li>Full brand guidelines PDF</li>
+      <li>Website build with CMS training</li>
+    </ul>
+
+    <hr class="fo-divider">
+    <p class="fo-p-small">Standard divider above, accent divider below.</p>
+    <hr class="fo-divider fo-divider--accent">
+  </section>
+
+  <!-- HUGE DISPLAY TEXT -->
+  <section class="fo-section fo-bg-ink fo-text-center">
+    <div class="fo-container">
+      <p class="fo-display-huge fo-text-cream">FLOURISH</p>
+      <p class="fo-script fo-text-cream" style="font-size: 48px;">your visibility era</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE / BLOG -->
+  <section class="fo-section">
+    <article class="fo-article fo-container" style="max-width: 720px;">
+      <p class="fo-meta">Apr 13, 2026 · Brand Strategy</p>
+      <h1 class="fo-article-title"><em>What Beyoncé, Dolly and Stevie can teach you about brand archetypes.</em></h1>
+      <p>Three women. Three archetypes. Three masterclasses in being unapologetically yourself. Here's what you can learn from each of them about building a brand that actually fits.</p>
+      <h2>The Ruler archetype</h2>
+      <p>Rulers lead with authority, structure, and a clear point of view. They don't ask permission — they set the agenda.</p>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fo-section--tight fo-bg-ink fo-text-center">
+    <div class="fo-container">
+      <p class="fo-script fo-text-cream" style="font-size: 48px; margin-bottom: 16px;">Flourish</p>
+      <p class="fo-p-small fo-text-cream">© Flourish Online 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
